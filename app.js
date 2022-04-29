@@ -17,7 +17,7 @@ async function getLocationWeatherData(location) {
     const URL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
       location +
-      "&appid=4d61cf0824a05bc7526fb1790bd9e842";
+      "&appid=4d61cf0824a05bc7526fb1790bd9e842&units=metric";
 
     const response = await fetch(URL, { mode: "cors" });
     const data = await response.json();
@@ -40,7 +40,7 @@ async function getLocationWeatherData(location) {
   }
 }
 
-getLocationWeatherData("Lagos");
+getLocationWeatherData("nasarawa");
 
 const loadWeatherData = (
   name,
@@ -53,9 +53,9 @@ const loadWeatherData = (
 ) => {
   cityName.textContent = name;
   count.textContent = country;
-  weatherDesc.textContent = description;
-  feelsLike.textContent = "Feels like: " + feels_like;
+  weatherDesc.textContent = description.toUpperCase();
+  feelsLike.textContent = "Feels like: " + feels_like + "℃";
   humid.textContent = "Humidity: " + humidity + "%";
-  temperature.textContent = "Temperature: " + temp;
-  maxTemp.textContent = "High: " + temp_max;
+  temperature.textContent = "Temperature: " + temp.toFixed(2);
+  maxTemp.textContent = "High: " + temp_max + "℃";
 };
