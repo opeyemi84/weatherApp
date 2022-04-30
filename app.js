@@ -56,7 +56,7 @@ const loadWeatherData = (
   weatherDesc.textContent = description.toUpperCase();
   feelsLike.textContent = "Feels like: " + Math.round(feels_like) + "℃";
   humid.textContent = "Humidity: " + humidity + "%";
-  temperature.textContent = "Temperature: " + Math.round(temp.toFixed(2));
+  temperature.textContent = "Temperature: " + Math.round(temp.toFixed(2)) + "℃";
   maxTemp.textContent = "High: " + Math.round(temp_max) + "℃";
 };
 
