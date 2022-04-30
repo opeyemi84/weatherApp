@@ -40,7 +40,7 @@ async function getLocationWeatherData(location) {
   }
 }
 
-getLocationWeatherData("nasarawa");
+getLocationWeatherData("Ijebu-Ode");
 
 const loadWeatherData = (
   name,
@@ -54,8 +54,23 @@ const loadWeatherData = (
   cityName.textContent = name;
   count.textContent = country;
   weatherDesc.textContent = description.toUpperCase();
-  feelsLike.textContent = "Feels like: " + feels_like + "℃";
+  feelsLike.textContent = "Feels like: " + Math.round(feels_like) + "℃";
   humid.textContent = "Humidity: " + humidity + "%";
-  temperature.textContent = "Temperature: " + temp.toFixed(2);
-  maxTemp.textContent = "High: " + temp_max + "℃";
+  temperature.textContent = "Temperature: " + Math.round(temp.toFixed(2));
+  maxTemp.textContent = "High: " + Math.round(temp_max) + "℃";
 };
+
+submit.addEventListener("click", () => {
+  getLocationWeatherData(input.value);
+});
+
+input.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    submit.click();
+  }
+});
+
+input.addEventListener("click", () => {
+  input.value = "";
+});
