@@ -21,7 +21,7 @@ async function getLocationWeatherData(location) {
 
     const response = await fetch(URL, { mode: "cors" });
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     const { name } = data;
     const { feels_like, humidity, temp, temp_max } = data.main;
     const { country } = data.sys;
@@ -35,8 +35,8 @@ async function getLocationWeatherData(location) {
       temp,
       temp_max
     );
-  } catch (message) {
-    console.log(message);
+  } catch (e) {
+    console.log(e);
   }
 }
 

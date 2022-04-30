@@ -1,4 +1,40 @@
-.displayWeather {
-  border: 1px solid red;
-  height: 250px;
+body {
+  background-image: url(https://cms.accuweather.com/wp-content/uploads/2021/12/ColoradoWeather2.jpeg?w=632);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  margin-bottom: 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 120px;
+}
+
+.weatherInfo {
+  display: flex;
+  justify-content: center;
+}
+
+.cardTop {
+  margin-right: 80px;
+}
+
+.cardLeft {
+  font-size: 30px;
+}
+
+.footer {
+  display: flex;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  font-weight: 800;
+  justify-content: center;
 }
