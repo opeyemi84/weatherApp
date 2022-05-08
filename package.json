@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/opeyemi84/weatherApp#readme",
   "dependencies": {
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "sweetalert2": "^11.4.10"
   }
 }
