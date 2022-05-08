@@ -21,6 +21,7 @@ async function getLocationWeatherData(location) {
 
     const response = await fetch(URL, { mode: "cors" });
     const data = await response.json();
+    if (data.cod != 200) throw data.message;
     // console.log(data);
     const { name } = data;
     const { feels_like, humidity, temp, temp_max } = data.main;
@@ -36,7 +37,12 @@ async function getLocationWeatherData(location) {
       temp_max
     );
   } catch (e) {
-    console.log(e);
+    Swal.fire({
+      title: "Error!",
+      text: e,
+      icon: "error",
+      confirmButtonText: "Ok",
+    });
   }
 }
 
